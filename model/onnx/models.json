@@ -1,0 +1,43 @@
+{
+  "audio": {
+    "source": "model/model-audio.pt",
+    "onnx": "model/onnx/efficientnet_audio.onnx",
+    "input_name": "mel_image",
+    "input_shape": [
+      null,
+      3,
+      224,
+      224
+    ],
+    "input_layout": "NCHW",
+    "preprocessing": "3-second 16kHz mono mel spectrogram",
+    "output_type": "logits_apply_softmax",
+    "classes": [
+      "unripe",
+      "ripe",
+      "Overripe"
+    ],
+    "opset": 17,
+    "max_validation_error": 2.8312206268310547e-06
+  },
+  "image": {
+    "source": "model/MobileNetV1/mobilenetv1_best.keras",
+    "onnx": "model/onnx/mobilenetv1_image.onnx",
+    "input_name": "image",
+    "input_shape": [
+      null,
+      224,
+      224,
+      3
+    ],
+    "input_layout": "NHWC",
+    "normalization": "minus_one_one",
+    "output_type": "softmax_probabilities",
+    "classes": [
+      "unripe",
+      "ripe",
+      "Overripe"
+    ],
+    "max_validation_error": 2.557644620537758e-07
+  }
+}

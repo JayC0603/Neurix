@@ -1,0 +1,29 @@
+services:
+  durian-classifier:
+    image: durian-v0.1.0
+    build:
+      context: ..
+      dockerfile: durian_classifier_device/Dockerfile
+    container_name: durian-classifier
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    env_file:
+      - .env
+    environment:
+      MODEL_PATH: /app/models/mobilenetv1_best.keras
+      MODEL_CLASSES_PATH: /app/config/classes.txt
+      AUDIO_MODEL_PATH: /app/models/model-audio.pt
+      IMAGE_MODEL_PYTHON: /usr/local/bin/python
+      AUDIO_MODEL_PYTHON: /usr/local/bin/python
+      CAMERA_DEVICE_PATH: /dev/video0
+      CAMERA_DEVICE: /dev/video0
+      CAMERA_ROI_PATH: /app/config/camera_roi.json
+      CAPTURE_OUTPUT_DIR: /app/captures
+    volumes:
+      - /dev:/dev
+      - /run/udev:/run/udev:ro
+      - ./captures:/app/captures
+      - ./logs:/app/logs
+      - ./config:/app/config
+      - ./record.wav:/app/record.wav

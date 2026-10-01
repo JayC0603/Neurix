@@ -1,0 +1,30 @@
+# Python environments and caches
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Local runtime configuration and generated state
+durian_classifier_device/.env
+durian_classifier_device/captures/
+durian_classifier_device/logs/
+durian_classifier_device/record.wav
+durian_classifier_device/debug_*.jpg
+durian_classifier_device/docker-build.log
+runs/
+
+# Local recordings and one-off generated analysis artifacts
+/*.wav
+/*.m4a
+/nguyen_van_cu_frequency_comparison.png
+
+# Accidental terminal pager output
+/iot-hardwardware/tall --upgrade pip setuptools wheel
+/code/0
+/code/=
+
+# Local editor and OS files
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,28 @@
+{
+    "model": "MobileNetV1 + ELA + BatchNorm",
+    "backbone": "MobileNetV1",
+    "pretrained": "ImageNet",
+    "training_mode": "one-stage full fine-tuning",
+    "checkpoint_monitor": "val_macro_f1",
+    "checkpoint_mode": "max",
+    "dataset_dir": "/content/drive/MyDrive/Durian_Dataset/durian_yolo_cls_no_aug",
+    "classes": [
+        "Unripe",
+        "Ripe",
+        "Overripe"
+    ],
+    "image_size": 224,
+    "batch_size": 64,
+    "epochs_max": 50,
+    "epochs_trained": 32,
+    "best_epoch": 22,
+    "best_val_macro_f1": 0.7570858895705522,
+    "learning_rate": 0.0001,
+    "minimum_learning_rate": 1e-07,
+    "dropout": 0.3,
+    "ela_kernel_size": 7,
+    "ela_groups": 16,
+    "ela_residual": false,
+    "seed": 42,
+    "runtime_sec": 16856.48090529442
+}

@@ -1,0 +1,14 @@
+gpiozero
+lgpio
+RPi.GPIO
+paho-mqtt
+requests
+python-dotenv
+
+fastapi
+uvicorn
+flask
+
+numpy
+pillow
+timm==1.0.28

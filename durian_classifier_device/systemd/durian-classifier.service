@@ -1,0 +1,19 @@
+[Unit]
+Description=Durian classifier hardware application with automatic servo HOME
+After=local-fs.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=@RUN_USER@
+WorkingDirectory=@PROJECT_DIR@
+ExecStartPre=+@PROJECT_DIR@/scripts/prepare-hardware-pwm.sh @RUN_USER@
+ExecStart=@PROJECT_DIR@/scripts/run.sh
+Restart=always
+RestartSec=10
+TimeoutStopSec=30
+KillSignal=SIGTERM
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

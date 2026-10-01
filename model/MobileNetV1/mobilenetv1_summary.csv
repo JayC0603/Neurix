@@ -1,0 +1,2 @@
+model,epochs,patience,imgsz,batch,optimizer,lr,augmentation,runtime_sec,save_dir
+MobileNetV1,30,7,224,64,Adam,0.001,No,5849.201341629028,/content/drive/MyDrive/Train_Durian/MobileNetV1
