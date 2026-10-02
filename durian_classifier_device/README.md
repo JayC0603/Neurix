@@ -1,8 +1,8 @@
 # Durian Classifier Device
 
-Ứng dụng độc lập cho Raspberry Pi 4: nhấn công tắc hành trình để chụp ảnh USB camera,
-phân loại độ chín sầu riêng bằng model ONNX/Keras/PyTorch và hiển thị kết quả
-trên LCD1602 I2C.
+Ứng dụng độc lập cho Raspberry Pi 4: nhấn công tắc hành trình để chụp ảnh
+bằng camera HQ-1080KDT-01, thu âm bằng micro thông thường, phân loại độ chín
+sầu riêng bằng model ONNX/Keras/PyTorch và hiển thị kết quả trên LCD1602 I2C.
 Kết quả được giữ trên LCD trong 15 giây trước khi trở về màn hình tên trường và đội.
 
 Tất cả lệnh bên dưới dùng đường dẫn tương đối. Repository có thể
@@ -96,8 +96,9 @@ detach PWM để dừng hunting/buzz. Nếu
 thanh bị nghiêng khi mất torque, cơ cấu cần điểm tựa, lò xo hoặc đối trọng tại
 HOME; không giữ PWM vô thời hạn để chống tải vì MG996R có thể hunting liên tục.
 
-Mỗi lần nhấn công tắc, nhánh camera chụp 3 ảnh theo các mốc cách nhau 3 giây và
-chạy model ảnh. Đồng thời, nhánh audio mở microphone, chạy ba nhịp servo
+Mỗi lần nhấn công tắc, camera HQ-1080KDT-01 chụp 3 ảnh theo các mốc cách
+nhau 3 giây và chạy model ảnh. Đồng thời, nhánh audio mở micro thông thường,
+chạy ba nhịp servo
 và chạy model âm thanh. Hai kết quả được chờ đủ rồi
 fusion theo trọng số cấu hình.
 

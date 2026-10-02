@@ -79,8 +79,8 @@ Image model                         v
 | Thiết bị | Kết nối mặc định |
 |---|---|
 | Raspberry Pi 4 | Thiết bị xử lý chính |
-| USB camera | `/dev/video0` |
-| USB microphone | Thiết bị input mặc định của ALSA |
+| Camera HQ-1080KDT-01 | Kết nối USB, mặc định `/dev/video0` |
+| Micro thông thường | Thiết bị thu âm input mặc định của ALSA |
 | LCD1602 I2C | SDA: GPIO2, SCL: GPIO3, địa chỉ `0x27` |
 | Công tắc hành trình | NO: GPIO5, COM: GND |
 | Servo MG996R | Signal: GPIO18/PWM0 |
@@ -116,7 +116,8 @@ Neurix/
 
 - Raspberry Pi OS 64-bit khuyến nghị.
 - Python 3.10 trở lên và có wheel phù hợp cho TensorFlow/PyTorch.
-- Camera V4L2, microphone ALSA và I2C đã được bật.
+- Camera HQ-1080KDT-01 nhận qua V4L2, micro thông thường nhận qua ALSA
+  và I2C đã được bật.
 - Khoảng trống đĩa đủ cho virtual environment và model AI.
 - Hai file model production:
   - `model/onnx/mobilenetv1_image.onnx`
@@ -163,7 +164,7 @@ Kiểm tra các giá trị quan trọng trong `.env`:
 
 | Biến | Mặc định | Chức năng |
 |---|---|---|
-| `CAMERA_DEVICE` | `/dev/video0` | Camera USB |
+| `CAMERA_DEVICE` | `/dev/video0` | Camera HQ-1080KDT-01 qua USB |
 | `MODEL_PATH` | `../model/onnx/mobilenetv1_image.onnx` | Model hình ảnh |
 | `AUDIO_MODEL_PATH` | `../model/model-audio.pt` | Model âm thanh |
 | `FUSION_IMAGE_WEIGHT` | `0.6` | Trọng số model hình ảnh |
